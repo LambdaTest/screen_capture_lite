@@ -62,12 +62,12 @@ namespace Screen_Capture {
         if (!SwitchToInputDesktop(data))
             return;
 #if defined _DEBUG || !defined NDEBUG
-        std::cout << "Starting to Capture on Monitor " << Name(monitor) << std::endl;
-        std::cout << "Trying DirectX Desktop Duplication " << std::endl;
+        //std::cout << "Starting to Capture on Monitor " << Name(monitor) << std::endl;
+        //std::cout << "Trying DirectX Desktop Duplication " << std::endl;
 #endif
         if (!TryCaptureMonitor<DXFrameProcessor>(data, monitor)) { // if DX is not supported, fallback to GDI capture
 #if defined _DEBUG || !defined NDEBUG
-            std::cout << "DirectX Desktop Duplication not supported, falling back to GDI Capturing . . ." << std::endl;
+            //std::cout << "DirectX Desktop Duplication not supported, falling back to GDI Capturing . . ." << std::endl;
 #endif
             TryCaptureMonitor<GDIFrameProcessor>(data, monitor);
         }
